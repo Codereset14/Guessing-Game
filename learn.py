@@ -3,21 +3,35 @@ from time import sleep
 
 comp_guess = random.randint(1, 100)
 
+
+
 def guess():
-    user_guess = int(input(("What number am I thinking about?   ")))
+    i = 5
+    while i > 0:
+        print("You have " + str(i) + " Chances left!")
+        sleep(0.4)
+        user_guess = int(input(("What number am I thinking about?   ")))
 
-    if user_guess == comp_guess:
-        print("You got it!, the number was " + str(comp_guess))
+        if user_guess == comp_guess:
+            print("You got it!, the number was " + str(comp_guess))
 
-    elif user_guess > comp_guess:
-        print("Too high, try again!")
-        sleep(1)
-        guess()
-    
-    elif user_guess < comp_guess:
-        print("Too low, try again!")
-        sleep(1)
-        guess()
+        elif user_guess > comp_guess:
+            print("Too high, try again!")
+            sleep(1)
+            
+                    
+                
+        elif user_guess < comp_guess:
+            print("Too low, try again!")
+            sleep(1)
+        i -= 1
+        
+        if i == 0:
+            print("You have reached the max amount of trials!")
+            sleep(0.3)
+
+        
+
 
 
 
